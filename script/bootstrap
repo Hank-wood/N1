@@ -63,11 +63,12 @@ function bootstrap() {
   var npmDedupeNpmCommand = npmPath + npmFlags + '--target=0.10.40 ' + 'dedupe';
   var npmDedupeNpmOptions = {cwd: path.join(apmDestinationPath, 'node_modules', 'npm')};
 
-  var apmInstallCommand = apmPath + ' install' + apmFlags;
+  var apmInstallCommand = apmPath + ' install --msvs_version=2013 ' + apmFlags;
 
   var apmEnv = JSON.parse(JSON.stringify(process.env))
   apmEnv['ATOM_ELECTRON_VERSION'] = targetElectronVersion;
   apmEnv['ATOM_HOME'] = path.join(userHomeDirectory, '.nylas');
+  apmEnv['GYP_MSVS_VERSION'] = '2013';
 
   var apmDedupeCommand = apmPath + ' dedupe' + apmFlags;
   var semverOptions = {

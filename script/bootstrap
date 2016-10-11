@@ -82,12 +82,11 @@ function bootstrap() {
 
   var sqlite3Command = makeSqlite3Command();
 
-  var apmInstallCommand = apmPath + ' install --msvs_version=2013 ' + apmFlags;
+  var apmInstallCommand = apmPath + ' install' + apmFlags;
 
   var apmEnv = JSON.parse(JSON.stringify(process.env))
   apmEnv['ATOM_ELECTRON_VERSION'] = targetElectronVersion;
   apmEnv['ATOM_HOME'] = path.join(userHomeDirectory, '.nylas');
-  apmEnv['GYP_MSVS_VERSION'] = '2013';
 
   var apmDedupeCommand = apmPath + ' dedupe' + apmFlags;
   var semverOptions = {

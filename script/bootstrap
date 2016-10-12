@@ -22,7 +22,7 @@ function makeSqlite3Command() {
 
   // Use our local version of npm (npm 3x) to build sqlite
   var npmPath = '"' + path.resolve(__dirname, '..', 'build', 'node_modules', '.bin', 'npm') + '"';
-  return npmPath + " install https://github.com/bengotow/better-sqlite3/archive/1006ba02d6f74f8bf51ddb022c4cb9d3bfe4dead.tar.gz --ignore-scripts && cd node_modules/better-sqlite3 && "+nodeGypPath+" configure rebuild --target="+targetElectronVersion+" --arch="+targetArch+" --target_platform="+targetPlatform+" --dist-url=https://atom.io/download/atom-shell"
+  return npmPath + " install https://github.com/bengotow/better-sqlite3/archive/1006ba02d6f74f8bf51ddb022c4cb9d3bfe4dead.tar.gz --ignore-scripts && cd node_modules/better-sqlite3 && "+nodeGypPath+" configure rebuild --msvs_version=2013 --target="+targetElectronVersion+" --arch="+targetArch+" --target_platform="+targetPlatform+" --dist-url=https://atom.io/download/atom-shell"
 }
 
 
